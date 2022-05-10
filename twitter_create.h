@@ -20,10 +20,10 @@ char user[USR_LENGTH];
 
 typedef struct user{
    char username[USR_LENGTH];
-   char followers[MAX_FOLLOWERS][USR_LENGTH];
+   char followers[MAX_FOLLOWERS];
    int num_followers;
 
-   char following[MAX_FOLLOWING][USR_LENGTH];
+   char following[MAX_FOLLOWING];
    int num_following;
 
 }user;

@@ -35,40 +35,24 @@ void endTurn(twitter* twitter1){
 
 }
 
-void follow(twitter* twitter1){
-    char followee[USR_LENGTH];
-    user currentUser = twitter1->users[twitter1->counter];
-    printf("\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-    printf("\nSelect from the list of users below to follow:");
-    for(int i = 0; i<twitter1->num_users;i++) {
-        if (strcmp(twitter1->users[i].username, currentUser.username) != 0) {
-            printf("\n%d:  %s\n", i, twitter1->users[i].username);
-        }
-
-    }
-    fgets(followee, USR_LENGTH, stdin);
-    int intfollow = atoi(followee);
-    strcpy(currentUser.following[currentUser.num_following], twitter1->users[intfollow].username);
-    //currentUser.num_following++;
-    twitter1->users[twitter1->counter].num_following++;
-
-    user follower = twitter1->users[intfollow];
-    strcpy(follower.followers[follower.num_followers], currentUser.username);
-    twitter1->users[intfollow].num_followers++;
+void follow(twitter* twitter_system){
+    user currentUser = twitter_system->users[twitter_system->counter];
+    printf("\nCURRENT NAME: %s", currentUser);
+    strcpy(&currentUser.followers[0], "bob");
+    printf("\nXXX : %s", &currentUser.followers[0]);
 
 
 }
 
 void unfollow(twitter* twitter_system){
-    user currentUser = twitter_system->users[twitter_system->counter];
-    printf("\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-    printf("\nUnfollow List:");
-    printf("%d ",currentUser.num_following);
-    for(int i = 0; i<currentUser.num_following;i++){
-        if (strcmp(twitter_system->users[i].username, currentUser.username) != 0) {
-            
-        }
-    }
+ //   user currentUser = twitter_system->users[twitter_system->counter];
+//    printf("\nCURRENT NAME2: %s", currentUser);
+//    printf("\nNUM FOLLOWING: %d", currentUser.num_following);
+//    printf("\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+//    printf("\nUnfollow List:");
+//    printf("%d ",currentUser.num_following);
+
+
 
 
 
